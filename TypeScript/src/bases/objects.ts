@@ -9,15 +9,14 @@ console.log("hola");
 // Es una estructura que agrupa datos relacionados usando clave : valor
 // Se usa para representar cosas reales como personas, productos, etc.
 const useR = {
-  nombre: "María José",
-  lastName: "Sandoval Guillén",
-  age: 19,
-  address: {
+    nombre: "María José",
+    lastName: "Sandoval Guillén",
+    address: {
     city: "aguascalientes",
     cp: 20342,
-  },
-  isAdmin: true,
-  permissions: ["1", "2"],
+    },
+    isAdmin: true,
+    permissions: ["1", "2"],
 };
 console.log(useR);
 
@@ -25,34 +24,18 @@ console.log(useR);
 // Sirve para definir la forma que debe tener un objeto
 // Ayuda a evitar errores y controlar los tipos de datos
 interface User {
-msg?: string,
   name: string;
   lastName: string;
   age: number;
   address: {
-    city: "aguascalientes",
-    cp: 20342,
-  }
-   isAdmin: boolean;
-  permissions: string[],
-  printMessage: (a: number) => void;
-  telefono?: string; // Propiedad opcional (puede existir o no)
+    city: string;
+    cp: number;
+  };
+  isAdmin: boolean;
+  permissions: string[];
+  msg?: string;
+  printMessage?: () => void;
 }
-const user: User = {
-  name: "María José",
-  lastName: "Sandoval Guillén",
-  age: 19,
-  address: {
-    city: "aguascalientes",
-    cp: 20342,
-  },
-  isAdmin: true,
-  permissions: ["1", "2"],
-  printMessage: function (): {} {
-    console.log("hola mundo");
-  }
-};
-
 
 const userdos: User = {
   name: "María José",
@@ -64,31 +47,12 @@ const userdos: User = {
   },
   isAdmin: true,
   permissions: ["1", "2"],
-    printMessage: {
-};
- console.log(user) ;
-
-const message = userdos.msg; 
-
-
-
-
-
-
-
-
-
-// Uso de la interface
-// El objeto debe cumplir con la estructura de la interface
-const estudiante: Persona = {
-  nombre: "Luis",
-  edad: 22
+  printMessage: () => {
+    console.log("Hola, soy María José");
+  }
 };
 
-// Destructuring de objetos
-// Permite extraer propiedades de un objeto de forma rápida
-const { nombre, edad } = persona;
+console.log(userdos);
 
-// ¿const o let?
-// const: se usa casi siempre para objetos
-// let: solo si el objeto se va a reasignar
+const message = userdos.msg;
+console.log(message ?? "Sin mensaje");

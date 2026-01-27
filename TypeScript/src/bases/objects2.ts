@@ -40,4 +40,3 @@ const gato: Animal = {
 };
 
 gato.sound();
-console.log(Animal);
