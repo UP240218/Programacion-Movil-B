@@ -56,3 +56,57 @@ console.log(userdos);
 
 const message = userdos.msg;
 console.log(message ?? "Sin mensaje");
+
+
+// ¿Qué es un objeto?
+// Es una estructura que agrupa datos relacionados usando clave : valor
+// Se usa para representar cosas reales como personas, productos, etc.
+
+const persona = {
+  nombre: "María",
+  edad: 19,
+  ciudad: "Aguascalientes"
+};
+
+// ¿Para un objeto uso const o let?
+// Normalmente se usa const
+// Con const puedes modificar sus propiedades
+// Pero NO puedes reasignar el objeto completo
+
+persona.nombre = "José"; 
+// persona = {};         
+
+// Usa let solo si vas a reasignar el objeto
+let producto = {};
+producto = { nombre: "Laptop", precio: 15000 };
+
+// ¿Qué es destructuring de objetos?
+// Es una forma de extraer propiedades de un objeto y guardarlas en variables
+
+const { nombre, edad } = persona;
+console.log(nombre); // José
+console.log(edad);   // 19
+
+// También puedes cambiar el nombre de la variable al extraerla
+const { ciudad: city } = persona;
+console.log(city); // Aguascalientes
+
+// ¿Cómo poner una propiedad opcional? (TypeScript)
+// Se usa el signo ?
+
+interface User {
+  name: string;
+  age: number;
+  email?: string; // propiedad opcional
+}
+
+//const user1: User = {
+//  name: "María",
+ // age: 19
+//};
+
+//const user2: User = {
+  //name: "Ana",
+  //age: 20,
+  //email: "ana@mail.com"
+//};
